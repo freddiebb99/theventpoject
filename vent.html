@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<!-- Head -->
+{% block head %}
+<title>Vent</title>
+{% endblock %}
+
+<!-- Body -->
+{% block body %}
+<div class="hero">
+    <form class="inputForm" action="/vent" method="POST">
+    <div class="inputBox">
+        <textarea id="message" name="message" cols="30" rows="18" required></textarea>
+        <label for="message">What's on your mind?</label>
+    </div>
+
+    <button class="ventbtn" type="submit">VENT</button>
+
+    </form>
+</div>
+{% endblock %}
+

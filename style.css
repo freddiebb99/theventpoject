@@ -1,0 +1,385 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url("fonts/Raleway-Thin.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 1.1em;
+    
+}
+
+body{
+    background-color: #24252a;
+}
+
+/* Nav Bar */
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgba(76, 82, 112, 1);
+}
+
+.logo a{
+    color: rgba(235, 229, 229, 0.878);
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.logo a:hover{
+    color: rgba(85, 255, 170, 0.88);
+}
+
+.nav_links{
+    display: flex;
+    justify-content: space-around;
+    width: 38%;
+}
+
+.nav_links li{
+    list-style: none;
+}
+
+.nav_links a{
+    font-family: 'Raleway';
+    color: rgba(235, 229, 229, 0.88);
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 22px;
+    
+
+}
+
+.nav_links a:hover{
+    color: rgba(85, 255, 170, 0.88);
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: rgba(235, 229, 229, 0.88);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.burger:hover div{
+    background-color: rgba(85, 255, 170, 0.88);
+}
+
+/* Small Screens */
+@media screen and (max-width: 900px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    .nav_links{
+        position: absolute;
+        right: 0px;
+        height: 92svh;
+        top: 8vh;
+        background-color: #4c5270;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 3;
+        
+    }
+    .nav_links li{
+        opacity: 0;
+        
+    }
+
+    .burger{
+        display: block;
+    }
+}
+
+
+
+.nav_active{
+    transform: translateX(0%);
+    z-index: 3;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+        z-index: 3;
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,5px);
+    background-color: rgba(85, 255, 170, 0.88);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-5px);
+    background-color: rgba(85, 255, 170, 0.88);
+}
+
+/* Vent Part */
+
+.hero{
+    width: 100%;
+    min-height: calc(100svh - 8svh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputForm{
+    width: 90%;
+    max-width: 800px;
+}
+
+.inputBox{
+    margin-bottom: 30px;
+    height: 100%;
+    position: relative;
+}
+
+textarea{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid rgba(85, 255, 170, 0.88);
+    color: rgba(235, 229, 229, 0.88);
+    background: transparent;
+    border-radius: 20px;
+    font-size: 22px;
+    resize: inherit;
+    outline: none;
+}
+
+label{
+    position: absolute;
+    letter-spacing: 1px;
+    top: 0;
+    left: 3%;
+    padding: 1px;
+    color: rgba(235, 229, 229, 0.88);
+    cursor: text;
+    transition: 0.3s;
+}
+
+.ventbtn{
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 5px;
+    margin-left: 37.5%;
+    color: rgba(235, 229, 229, 0.88);
+    outline: none;
+    background: transparent;
+    border: none;
+    width: 25%;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.ventbtn:hover {
+    color: rgba(85, 255, 170, 0.88);
+    width: 55%;
+    margin-left: 22.5%;
+    /* font-weight: bold; */
+    background: rgba(235, 229, 229, 0.1);
+    border: none;
+   
+}
+
+ 
+textarea:focus~label,
+textarea:valid~label
+{
+    top: -12px;
+    left: 20px;
+    font-size: 18px;
+    color: rgba(85, 255, 170, 0.88);
+    background-color: #24252A;
+    background-size: auto;
+    
+}
+
+.id_confirm {
+    width: 100%;
+    min-height: calc(100svh - 8svh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.id_num {
+    text-align: center;
+    color: rgba(235, 229, 229, 0.6);
+    border: 1px solid rgba(85, 255, 170, 0.88);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.num_highlight{
+    color: rgba(85, 255, 170, 0.80);
+}
+
+.take_link {
+    text-decoration: none;
+    color: rgba(235, 229, 229, 0.6);
+}
+
+
+/* View Part */
+.searchBar {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_arrow,
+.right_arrow {
+    cursor: pointer;
+    color: rgba(235, 229, 229, 0.6);
+    font-variation-settings: 
+      'FILL' 0,
+      'wght' 300,
+      'GRAD' 200,
+      'opsz' 48;
+    transition: 0.3s;
+    
+}
+
+.left_arrow:hover, 
+.right_arrow:hover {
+    cursor: pointer;
+    color: rgba(85, 255, 170, 0.88);
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 24px;
+    background-color: rgba(235, 229, 229, 0.1);
+    max-width: 200px;
+    transition: all 0.25s;
+}
+
+.search:focus-within {
+    box-shadow: 0 0 2px rgba(85, 255, 170, 0.88);
+    background-color: rgba(235, 229, 229, 0.05);
+}
+
+.search_icon {
+    color: rgba(235, 229, 229, 0.6);
+}
+
+.search_input {
+    width: 150px;
+    font-size: 20px;
+    color: rgba(235, 229, 229, 0.88);
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+    
+}
+
+.search_input::placeholder {
+    color: rgba(235, 229, 229, 0.6);
+}
+
+.viewhero{
+    width: 100%;
+    min-height: calc(100svh - 8svh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.viewBox {
+    color: rgba(235, 229, 229, 0.88);
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    height: 50svh;
+    width: 80%;
+    position: relative;
+    resize: none;
+    border: 1px solid rgba(85, 255, 170, 0.88);
+    border-radius: 22px;
+    margin-bottom: 20px;
+    overflow: auto;
+    background: transparent;
+}
+
+/*
+.view_content {
+   
+}
+*/
+
+.interactions {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+
+.interact {
+    margin: 5px;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: auto;
+    background: transparent;
+    border: none;
+    color: rgba(235, 229, 229, 0.88);
+    position: relative;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.interact:hover {
+    color: rgba(85, 255, 170, 0.88);
+    background: rgba(235, 229, 229, 0.1);
+}
+
+.reacted:focus-within {
+    box-shadow: 0 0 2px rgba(85, 255, 170, 0.88);
+    background-color: rgba(235, 229, 229, 0.05);
+}

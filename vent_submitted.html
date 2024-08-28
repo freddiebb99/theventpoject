@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<!-- Head -->
+{% block head %}
+<title>Vent Submitted</title>
+{% endblock %}
+
+<!-- Body -->
+{% block body %}
+<div class="id_confirm">
+    <p class="id_num">
+        Unique Vent ID: <span class="num_highlight">{{ vent_id }}</span>
+        <br>
+        <br>
+        Thank you for your submission.
+        <br>
+        You are not alone in feeling this way. 
+        <br>
+        To check back on your submission enter your ID on the VIEW page.
+    </p>
+    <!-- <a class="take_link" href="{{ url_for('view') }}">View all vents</a> -->
+</div>  
+{% endblock %}
